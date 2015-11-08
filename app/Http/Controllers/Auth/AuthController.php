@@ -86,7 +86,7 @@ class AuthController extends Controller
             $user = Socialite::driver('facebook')->user();
             $token = $user->token;
             $userId = $user->getId();
-            $userNickName = $user->getNickname();
+            //$userNickName = $user->getNickname();
             $userName = $user->getName();
             $userEmail = $user->getEmail();
             $userAvatar = $user->getAvatar();
