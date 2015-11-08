@@ -83,13 +83,18 @@ class AuthController extends Controller
         public function handleFacebookAuthCallback()
         {
             $user = Socialite::driver('facebook')->user();
-
             $token = $user->token;
             $userId = $user->getId();
             $userNickName = $user->getNickname();
             $userName = $user->getName();
             $userEmail = $user->getEmail();
             $userAvatar = $user->getAvatar();
+            Log::info($token);
+            Log::info($userId);
+            Log::info($userNickname);
+            Log::info($userName);
+            Log::info($userEmail);
+            Log::info($userAvatar);
 
         }
 
