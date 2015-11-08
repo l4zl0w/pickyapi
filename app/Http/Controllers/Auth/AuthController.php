@@ -62,4 +62,54 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+    /*
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+    */
+        public function redirectToFacebookAuth()
+        {
+            return Socialite::driver('facebook')->redirect();
+        }
+
+        /*
+         * Obtain the user information from GitHub.
+         * 
+         * @return Response
+        */
+        public function handleFacebookAuthCallback()
+        {
+            $user = Socialite::driver('facebook')->user();
+
+            $token = $user->token;
+            $userId = $user->getId();
+            $userNickName = $user->getNickname();
+            $userName = $user->getName();
+            $userEmail = $user->getEmail();
+            $userAvatar = $user->getAvatar();
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
