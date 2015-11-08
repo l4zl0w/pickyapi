@@ -92,7 +92,7 @@ class AuthController extends Controller
             $userAvatar = $user->getAvatar();
             Log::info($token);
             Log::info($userId);
-            Log::info($userNickname);
+            //Log::info($userNickname);
             Log::info($userName);
             Log::info($userEmail);
             Log::info($userAvatar);
